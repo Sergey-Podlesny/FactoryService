@@ -1,0 +1,38 @@
+﻿@model FactoryService.Models.Employee;
+
+<form method="post" asp-action="edit">
+    <div>
+        <label>Фамилия</label><br />
+        <input asp-for="Surname" value="@Model.Surname"/>
+    </div>
+    <div>
+        <label>Имя</label><br />
+        <input asp-for="Firstname" value="@Model.Firstname"/>
+    </div>
+    <div>
+        <label>Отчество</label><br />
+        <input asp-for="Patronymic" value="@Model.Patronymic"/>
+    </div>
+    <div>
+        <label>Дата приёма на работу</label><br />
+        <input asp-for="EmploymentDate" value="@Model.EmploymentDate"/>
+    </div>
+    <div>
+        <label>Должность</label><br />
+        <input asp-for="Position" value="@Model.Position"/>
+    </div>
+    <div>
+        <label>Компания</label><br />
+        <select asp-for="Company">
+            <option value="" selected disabled hidden></option>
+            @foreach (var company in ViewBag.Companies)
+            {
+                <option>@company.CompanyName</option>
+            }
+        </select><br /><br />
+    </div>
+    <div>
+        <input type="submit" value="Изменить" /><br /><br />
+        <input type="submit" asp-controller="employees" asp-action="list" value="Вернуться"/>
+    </div>
+</form>

@@ -1,0 +1,16 @@
+﻿@model FactoryService.Models.Company;
+
+<form method="post" asp-action="edit">
+    <div>
+        <label>Наименование </label><br />
+        <input asp-for="CompanyName " value="@Model.CompanyName"/>
+    </div>
+    <div>
+        <label>Форма</label><br />
+        <input asp-for="CompanyForm" value="@Model.CompanyForm"/>
+    </div><br />
+    <div>
+        <input type="submit" value="Изменить" /><br /><br />
+        <input asp-controller="companies" asp-action="list" type="submit" value="Вернуться" />
+    </div>
+</form>

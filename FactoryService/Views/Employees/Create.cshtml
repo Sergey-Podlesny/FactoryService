@@ -1,0 +1,37 @@
+﻿@model FactoryService.Models.Employee;
+
+<form method="post" asp-action="create">
+    <div>
+        <label>Фамилия</label><br />
+        <input asp-for="Surname" />
+    </div>
+    <div>
+        <label>Имя</label><br />
+        <input asp-for="Firstname" />
+    </div>
+    <div>
+        <label>Отчество</label><br />
+        <input asp-for="Patronymic" />
+    </div>
+    <div>
+        <label>Дата приёма на работу</label><br />
+        <input asp-for="EmploymentDate" />
+    </div>
+    <div>
+        <label>Должность</label><br />
+        <input asp-for="Position" />
+    </div>
+    <div>
+        <label>Компания</label><br />
+        <select asp-for="Company">
+            <option value="" selected disabled hidden></option>
+            @foreach (var company in ViewBag.Companies)
+            {
+                <option>@company.CompanyName</option>
+            }
+        </select><br /><br />
+    </div>
+    <div>
+        <input type="submit" value="Создать" />
+    </div>
+</form>

@@ -1,0 +1,15 @@
+﻿@model FactoryService.Models.Company;
+
+<form method="post" asp-action="create">
+    <div>
+        <label>Наименование </label><br />
+        <input asp-for="CompanyName" />
+    </div>
+    <div>
+        <label>Форма</label><br />
+        <input asp-for="CompanyForm" />
+    </div><br />
+    <div>
+        <input type="submit" value="Создать" />
+    </div>
+</form>

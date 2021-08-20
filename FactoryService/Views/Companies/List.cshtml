@@ -1,0 +1,17 @@
+﻿@model IEnumerable<FactoryService.Models.Company>
+<table>
+    <tr><th>Id</th><th>CompanyName</th><th>CompanyForm</th></tr>
+    @foreach (var company in Model)
+    {
+        <tr>
+            <td>@company.Id</td>
+            <td>@company.CompanyName</td>
+            <td>@company.CompanyForm</td>
+            <td>
+                <a asp-controller="companies" asp-action="edit" asp-route-id="@company.Id">Изменить</a>
+                <a asp-controller="companies" asp-action="delete" asp-route-id="@company.Id">Удалить</a>
+            </td>
+        </tr>
+    }
+</table>
+<a asp-controller="companies" asp-action="create">Добавить</a>
